@@ -22,11 +22,29 @@ def generate_launch_description():
             executable='robot_state_publisher',
             parameters=[{'robot_description': robot_description}]
         ),
+        
+#       Node(
+ #            package='imu_driver_pkg',
+  #           executable='imu_driver_node',
+   #          name='imu_driver',
+    #         output='screen'
+     #      ),
+
 
         # Run your IMU node (adjust package/executable)
         Node(
             package='imu_mahony',
             executable='imu_node',
             output='screen'
+        ),
+
+        # Run your IMU node (adjust package/executable)
+        Node(
+            package='imu_mahony',
+            executable='imu_tf_broadcaster',
+            output='screen'
         )
+
     ])
+
+

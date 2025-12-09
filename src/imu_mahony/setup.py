@@ -25,6 +25,7 @@ setup(
     entry_points={
         'console_scripts': [
           'imu_node = imu_mahony.imu_node:main',
+           'imu_tf_broadcaster = imu_mahony.imu_tf_broadcaster:main',
         ],
     },
 )
