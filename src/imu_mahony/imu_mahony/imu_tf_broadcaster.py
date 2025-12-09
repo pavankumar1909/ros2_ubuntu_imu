@@ -30,6 +30,8 @@ class IMUTFBroadcaster(Node):
         t.transform.translation.x = 0.0
         t.transform.translation.y = 0.0
         t.transform.translation.z = 0.03
+        
+               
 
         self.br.sendTransform(t)
 
@@ -37,7 +39,6 @@ def main(args=None):
     rclpy.init(args=args)
     node = IMUTFBroadcaster()
     rclpy.spin(node)
-    node.destroy_node()
     rclpy.shutdown()
 
 if __name__ == '__main__':
