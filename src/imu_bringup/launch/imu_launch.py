@@ -6,6 +6,14 @@ import xacro
 
 def generate_launch_description():
 
+    config = os.path.join(
+        get_package_share_directory('imu_bringup'),
+        'config',
+        'imu_params.yaml'
+    )
+
+
+
     imu_desc_path = os.path.join(
         get_package_share_directory('imu_description'),
         'urdf/imu_model.urdf.xacro'
@@ -35,15 +43,25 @@ def generate_launch_description():
         Node(
             package='imu_mahony',
             executable='imu_node',
-            output='screen'
+            output='screen',
+            parameters=[config]
         ),
 
         # Run your IMU node (adjust package/executable)
         Node(
-            package='imu_mahony',
+           package='imu_mahony',
             executable='imu_tf_broadcaster',
-            output='screen'
-        )
+            output='screen',
+            parameters=[config]
+        ),
+
+#        Node(
+#            package    ='imu_bringup',
+#            executable ='imu_node',
+          #  name       ='imu_node',
+#            output     ='screen',
+#            parameters =[config]
+#           )
 
     ])
 

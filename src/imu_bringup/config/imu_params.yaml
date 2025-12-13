@@ -1,0 +1,26 @@
+imu_node:
+  ros__parameters:
+
+    # Mahony filter gains
+    kp: 4.0
+    ki: 0.2
+
+    # Complementary filter blending
+    alpha: 0.98
+
+    # Gyro calibration bias (paste your final values here)
+    gyro_bias_x: 0.56692111959287
+    gyro_bias_y: 0.8809160305343511
+    gyro_bias_z: -1.42330788804071
+
+    # Use calibration or not
+    auto_calibrate: false
+    calibration_duration: 1.5
+    # IMU publish rate
+    rate_hz: 100.0
+
+    # MPU6050 DLPF mode (0–6)
+    dlpf_mode: 3
+    orientation_covariance: [0.0025,0.0,0.0,0.0,0.0025,0.0,0.0,0.0,0.0025]
+    angular_velocity_covariance: [0.01,0.0,0.0,0.0,0.01,0.0,0.0,0.0,0.01]
+    linear_acceleration_covariance: [0.04,0.0,0.0,0.0,0.04,0.0,0.0,0.0,0.04]

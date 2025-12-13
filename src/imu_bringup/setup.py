@@ -12,6 +12,9 @@ setup(
         ('share/' + package_name, ['package.xml']),
         # Install launch files
         ('share/' + package_name + '/launch', ['launch/imu_launch.py']),
+       
+        # Install the parameter YAML file 
+        ('share/' + package_name + '/config', ['config/imu_params.yaml']),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -26,6 +29,7 @@ setup(
     },
     entry_points={
         'console_scripts': [
+        'imu_node = imu_bringup.imu_node:main',
         ],
     },
 )
